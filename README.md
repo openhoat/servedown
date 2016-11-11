@@ -1,20 +1,31 @@
-## Servedown
+# Servedown
 
 Serve your markdown documentations
 
-## Installation
+## Command line
+
+### Installation
 
 ```
 $ npm i servedown -g
 ```
 
-## Usage
+### Usage
 
-### Command line
+```
+$ servedown
+```
 
-### Module
+## Module
 
-#### Express app
+### Installation
+
+```
+$ cd yournodeproject
+$ npm i servedown --save
+```
+
+### Usage
 
 ```
 const path = require('path');
