@@ -1,0 +1,44 @@
+body .table tbody > tr > td {
+  vertical-align: middle;
+}
+
+body h1 {
+  color: black;
+}
+
+body h2, body h3, body h4, body h5, body h6 {
+  color: #724a39;
+}
+
+body a[id]:not([href]):hover {
+  text-decoration: none;
+}
+
+#logo {
+  height: 36px;
+}
+
+.header {
+  border-color: #FECB00;
+}
+
+.branding .text-highlight {
+  color: #ffc928;
+}
+
+.doc-menu > li > a {
+  width: 210px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  white-space: nowrap;
+}
+
+.doc-menu > li.active > a {
+  border-color: #724a39;
+  color: #724a39;
+}
+
+a {
+  color: #0081d7;
+}

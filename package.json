@@ -1,0 +1,41 @@
+{
+  "name": "servedown",
+  "version": "0.0.1",
+  "description": "Serve your markdown documentations",
+  "main": "lib/servedown.js",
+  "scripts": {
+    "start": "node lib/servedown.js",
+    "lint": "eslint ."
+  },
+  "bin": {
+    "servedown": "./bin/servedown"
+  },
+  "author": "Olivier Penhoat <openhoat@gmail.com> (http://headwood.net/)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:openhoat/servedown.git"
+  },
+  "bugs": {
+    "url": "https://github.com/openhoat/servedown/issues"
+  },
+  "engines": {
+    "node": ">= 6"
+  },
+  "dependencies": {
+    "bluebird": "^3.4.6",
+    "express": "^4.14.0",
+    "highlight.js": "^9.8.0",
+    "hw-logger": "^1.1.15",
+    "lodash": "^4.16.6",
+    "lodash.template": "^4.4.0",
+    "marked": "^0.3.6",
+    "mkdirp": "^0.5.1",
+    "yamljs": "^0.2.8"
+  },
+  "devDependencies": {
+    "eslint": "^3.9.1",
+    "eslint-config-nodejs": "^1.1.0",
+    "eslint-plugin-import": "^2.1.0"
+  }
+}

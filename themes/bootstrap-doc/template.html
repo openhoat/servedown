@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!--[if IE 8]>
+<html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]>
+<html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en"> <!--<![endif]-->
+<head>
+  <title><%- title %></title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="shortcut icon" href="/assets/img/servedown-icon.png">
+  <link
+      href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+      rel='stylesheet' type='text/css'>
+  <link href="/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+  <link href="/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/assets/css/prism.css" rel="stylesheet">
+  <link href="/assets/elegantfont/css/elegant-font.css" rel="stylesheet">
+  <link href="/assets/css/ekko-lightbox.min.css" rel="stylesheet">
+  <link href="/assets/css/pretty-docs.css" rel="stylesheet">
+  <link href="/assets/css/style.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body class="body-blue">
+<div class="page-wrapper">
+  <header id="header" class="header">
+    <div class="container">
+      <div class="branding">
+        <h1 class="logo">
+          <a href="/">
+            <span aria-hidden="true" class="icon_book_alt icon"></span>
+            <span class="text-highlight">MyDocs</span>
+          </a>
+          <span class="text-bold"><%- title %></span>
+        </h1>
+      </div>
+      <ol class="breadcrumb">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+      </ol>
+    </div>
+  </header>
+  <div class="doc-wrapper">
+    <div class="container">
+      <div class="doc-body">
+        <% if (typeof repo !== 'undefined' && typeof repo.fileUrl !== 'undefined') { %>
+        <div class="meta text-right"><i class="glyphicon glyphicon-pencil"></i> <a title="Source" href="<%= repo.fileUrl %>">source</a></div>
+        <% } %>
+        <div class="doc-content">
+          <div class="content-inner">
+            <%= body %>
+          </div>
+        </div>
+        <div class="doc-sidebar hidden-xs">
+          <nav id="doc-nav">
+            <% if (typeof toc !== 'undefined') { %>
+            <ul id="doc-menu" class="nav doc-menu" data-spy="affix" data-offset-top="180">
+              <% toc.forEach(item => { %>
+              <li><a title="<%= item.title %>" href="#<%- item.id %>"><%= item.title %></a></li>
+              <% }); %>
+            </ul>
+            <% } %>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer id="footer" class="footer text-center">
+  <div class="container">
+    <small class="copyright">
+      Powered by
+      <a href="https://github.com/openhoat/servedown" target="_blank">Servedown</a>
+    </small>
+  </div>
+</footer>
+<script src="/assets/jquery/jquery.min.js"></script>
+<script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+<script src="/assets/js/prism.js"></script>
+<script src="/assets/js/jquery.scrollTo.min.js"></script>
+<script src="/assets/js/jquery.matchHeight-min.js"></script>
+<script src="/assets/js/pretty-docs.js"></script>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>
