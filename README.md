@@ -1,4 +1,7 @@
 [![NPM version](https://badge.fury.io/js/servedown.svg)](http://badge.fury.io/js/servedown)
+[![Build Status](https://travis-ci.org/openhoat/servedown.png?branch=master)](https://travis-ci.org/openhoat/servedown)
+[![Coverage Status](https://coveralls.io/repos/openhoat/servedown/badge.svg)](https://coveralls.io/r/openhoat/servedown)
+[![npm](https://img.shields.io/npm/l/express.svg?style=flat-square)]()
 
 # Servedown
 
