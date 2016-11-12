@@ -1,3 +1,5 @@
+[![NPM version](https://badge.fury.io/js/laposte-okapi-sdk.svg)](http://badge.fury.io/js/laposte-okapi-sdk)
+
 # Servedown
 
 Serve your markdown documentations
