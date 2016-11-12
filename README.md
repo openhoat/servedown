@@ -70,6 +70,8 @@ Starts the servedown doc server :
 $ servedown
 ```
 
+By default servedown will checkout all git repos into ~/.servedown directory.
+
 ## Module
 
 If you prefer to embed servedown features into an existing express app, then use the provided middleware.
@@ -109,9 +111,9 @@ servedown.compute() // Prepare html rendering
 
 ## Features
 
-- Templates support
-- TOC support (based on H2)
+- Theme support : use one of the two themes provided or use your owns, and hot switch the current theme with ?theme=
+- TOC support : generated from level 2 headers of the content 
 - Git source link
-- Hot update
+- Hot update : add ?update to your browser address and it will reload (included git update)
 
 Enjoy!
