@@ -4,6 +4,13 @@
 
 Serve your markdown documentations
 
+## Why?
+
+- Needed to have a simple solution to render markdown files in many git projects
+- Did not get fully satisfied with [gollum](https://github.com/gollum/gollum) or [smeagol](https://github.com/rubyworks/smeagol) (though there are very nice)
+- Render docs for read-only usage
+- Ability to easily customize styles and templates 
+
 ## Command line
 
 The simplest way to use servedown is the command line.
