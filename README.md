@@ -62,6 +62,10 @@ htmlRender:                                             # Configuration to use t
   linkify: false
   typographer: false
   quotes: "“”‘’"
+server:                                                 # Server configuration : used only from command line
+  host: "0.0.0.0"                                       # Optionnal server host to listen
+  port: 3000                                            # Server port, overrided by SERVEDOWN_PORT environment variable
+  # socket:                                             # Optionnal server *nix socket, overrided by SERVEDOWN_SOCKET environment variable (is set, port and host are ignored)
 ```
 
 Starts the servedown doc server :
