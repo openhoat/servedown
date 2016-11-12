@@ -111,9 +111,20 @@ servedown.compute() // Prepare html rendering
 
 ## Features
 
-- Theme support : use one of the two themes provided or use your owns, and hot switch the current theme with ?theme=
-- TOC support : generated from level 2 headers of the content 
-- Git source link
-- Hot update : add ?update to your browser address and it will reload (included git update)
+### Theme support
+ 
+Use one of the two themes provided or use your owns, and hot switch the current theme with ?theme=
+
+### TOC support
+ 
+Table of contents is dynamically generated from the level 2 headers of markdown contents.
+
+### Git source link
+
+Optionnaly show the source link of the current document to make documentation changes easy.
+
+### Hot update
+
+Add ?update to your browser address and it will reload, included git update.
 
 Enjoy!
