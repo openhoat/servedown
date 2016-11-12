@@ -43,13 +43,13 @@ Now your server is ready...
 
 - Result :
 
-![Welcome page](samples/screenshot1.png)
+<img title="Welcome page" src="samples/screenshot1.png" width="450">
 
 The welcome page is generated from a default template string (or your own index.html)
 
 - Click on "Servedown" doc project :
 
-![Welcome page](samples/screenshot2.png)
+<img title="Servedown README" src="samples/screenshot2.png" width="450">
 
 Now you see your markdown files rendered with styles :-)
  
