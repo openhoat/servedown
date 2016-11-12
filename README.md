@@ -11,6 +11,42 @@ Serve your markdown documentations
 - Render docs for read-only usage
 - Ability to easily customize styles and templates 
 
+## Getting started
+
+With a sample configuration, let's serve this project documentation :
+
+- Configuration ~/.servedown.yml :
+
+    ```
+    repos:
+      - name: servedown
+        ssh: git@github.com:openhoat/servedown.git
+        url: https://github.com/openhoat/servedown
+        filePattern: /blob/master/{{file}}
+    ```
+
+- Start the server :
+
+    ```
+    $ servedown
+    INFO  - servedown:181 - 131ms - cloning repo "servedown"...
+    INFO  - servedown:409 - 4.2s - servedown is listening to 0.0.0.0:3000
+    ```
+
+- Browse :
+
+    ```
+    $ xdg-open http://localhost:3000
+    ```
+
+- Result :
+
+![Welcome page](samples/screenshot1.png)
+
+- Select doc project (click)
+
+![Welcome page](samples/screenshot2.png)
+
 ## Command line
 
 The simplest way to use servedown is the command line.
