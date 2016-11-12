@@ -43,7 +43,7 @@ With a sample configuration, let's serve this project documentation :
 
 ![Welcome page](samples/screenshot1.png)
 
-- Select doc project (click)
+- Click on "Servedown" doc project :
 
 ![Welcome page](samples/screenshot2.png)
 
