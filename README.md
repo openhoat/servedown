@@ -4,6 +4,12 @@ Serve your markdown documentations
 
 ## Command line
 
+The simplest way to use servedown is the command line.
+
+All you have to do is :
+1. set your servedown configuration file (.servedown.yml) into your home directory
+2. run the servedown command
+
 ### Installation
 
 ```
@@ -48,13 +54,15 @@ htmlRender:                                             # Configuration to use t
   quotes: "“”‘’"
 ```
 
-Starts the doc server :
+Starts the servedown doc server :
 
 ```
 $ servedown
 ```
 
 ## Module
+
+If you prefer to embed servedown features into an existing express app, then use the provided middleware.
 
 ### Installation
 
@@ -90,5 +98,10 @@ servedown.compute() // Prepare html rendering
 ```
 
 ## Features
+
+- Templates support
+- TOC support (based on H2)
+- Git source link
+- Hot update
 
 Enjoy!
