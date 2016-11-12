@@ -131,7 +131,7 @@ $ npm i servedown --save
 
 ### Usage
 
-```
+```javascript
 const path = require('path');
 const express = require('express');
 const ServeDown = require('../lib/servedown');
