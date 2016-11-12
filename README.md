@@ -64,7 +64,7 @@ All you have to do is :
 
 ### Installation
 
-```
+```shell
 $ npm i servedown -g
 ```
 
@@ -112,7 +112,7 @@ server:                                                 # Server configuration :
 
 Starts the servedown doc server :
 
-```
+```shell
 $ servedown
 ```
 
@@ -124,7 +124,7 @@ If you prefer to embed servedown features into an existing express app, then use
 
 ### Installation
 
-```
+```shell
 $ cd yournodeproject
 $ npm i servedown --save
 ```
