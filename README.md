@@ -27,7 +27,7 @@ With a sample configuration, let's serve this project documentation :
 
 - Start the server :
 
-    ```
+    ```shell
     $ servedown
     INFO  - servedown:181 - 131ms - cloning repo "servedown"...
     INFO  - servedown:409 - 4.2s - servedown is listening to 0.0.0.0:3000
