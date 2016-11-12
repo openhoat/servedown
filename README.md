@@ -33,6 +33,8 @@ With a sample configuration, let's serve this project documentation :
     INFO  - servedown:409 - 4.2s - servedown is listening to 0.0.0.0:3000
     ```
 
+Now your server is ready...
+
 - Browse :
 
     ```
@@ -43,10 +45,14 @@ With a sample configuration, let's serve this project documentation :
 
 ![Welcome page](samples/screenshot1.png)
 
+The welcome page is generated from a default template string (or your own index.html)
+
 - Click on "Servedown" doc project :
 
 ![Welcome page](samples/screenshot2.png)
 
+Now you see your markdown files rendered with styles :-)
+ 
 ## Command line
 
 The simplest way to use servedown is the command line.
