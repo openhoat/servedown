@@ -33,7 +33,7 @@ With a sample configuration, let's serve this project documentation :
     INFO  - servedown:409 - 4.2s - servedown is listening to 0.0.0.0:3000
     ```
 
-Now your server is ready...
+    Now your server is ready...
 
 - Browse :
 
@@ -43,15 +43,15 @@ Now your server is ready...
 
 - Result :
 
-<img title="Welcome page" src="samples/screenshot1.png" width="450">
+    <img title="Welcome page" src="samples/screenshot1.png" width="450">
 
-The welcome page is generated from a default template string (or your own index.html)
+    The welcome page is generated from a default template string (or your own index.html)
 
 - Click on "Servedown" doc project :
 
-<img title="Servedown README" src="samples/screenshot2.png" width="450">
+    <img title="Servedown README" src="samples/screenshot2.png" width="450">
 
-Now you see your markdown files rendered with styles :-)
+    Now you see your markdown files rendered with styles :-)
  
 ## Command line
 
