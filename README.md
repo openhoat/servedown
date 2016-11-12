@@ -9,6 +9,7 @@ Serve your markdown documentations
 The simplest way to use servedown is the command line.
 
 All you have to do is :
+
 1. set your servedown configuration file (.servedown.yml) into your home directory
 2. run the servedown command
 
@@ -47,7 +48,7 @@ indexTemplate: index.html                               # Template file name to 
 defaultTitle: Home                                      # Default title (for example, used in root page)
 updateQuery: true                                       # True, to enable hot update support (?update in browser) 
 htmlRender:                                             # Configuration to use to convert md to html
-  html: true
+  html: true                                            # For full usage information please see https://github.com/chjj/marked
   xhtmlOut: false
   breaks: false
   langPrefix: lang-
