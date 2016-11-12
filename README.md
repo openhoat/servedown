@@ -17,7 +17,7 @@ With a sample configuration, let's serve this project documentation :
 
 - Configuration ~/.servedown.yml :
 
-    ```
+    ```yml
     repos:
       - name: servedown
         ssh: git@github.com:openhoat/servedown.git
