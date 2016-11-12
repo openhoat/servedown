@@ -37,7 +37,7 @@ With a sample configuration, let's serve this project documentation :
 
 - Browse :
 
-    ```
+    ```shell
     $ xdg-open http://localhost:3000
     ```
 
