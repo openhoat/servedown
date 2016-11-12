@@ -59,7 +59,7 @@ The simplest way to use servedown is the command line.
 
 All you have to do is :
 
-1. set your servedown configuration file (.servedown.yml) into your home directory
+1. setup your servedown configuration file (.servedown.yml) into your home directory
 2. run the servedown command
 
 ### Installation
@@ -116,7 +116,7 @@ Starts the servedown doc server :
 $ servedown
 ```
 
-By default servedown will checkout all git repos into ~/.servedown directory.
+If repos are specified in configuraton servedown will checkout them into the working directory (~/.servedown), then it will compute recursively the working dir to render the doc site.
 
 ## Module
 
