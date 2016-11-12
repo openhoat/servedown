@@ -159,7 +159,7 @@ servedown.compute() // Prepare html rendering
 
 ### Theme support
  
-Use one of the two themes provided or use your owns, and hot switch the current theme with ?theme=
+Use one of the two themes provided or use your owns, and hot switch the current theme with **?theme=**
 
 ### TOC support
  
@@ -171,6 +171,6 @@ Optionnaly show the source link of the current document to make documentation ch
 
 ### Hot update
 
-Add ?update to your browser address and it will reload, included git update.
+Add **?update** to your browser address and it will reload, included git update.
 
 Enjoy!
