@@ -1,4 +1,4 @@
-[![NPM version](https://badge.fury.io/js/laposte-okapi-sdk.svg)](http://badge.fury.io/js/laposte-okapi-sdk)
+[![NPM version](https://badge.fury.io/js/servedown.svg)](http://badge.fury.io/js/servedown)
 
 # Servedown
 
