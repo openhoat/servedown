@@ -23,10 +23,12 @@ describe('servedown', () => {
   });
 
   it('should init', () => {
-    const config = {workingDir: path.join(__dirname, '..', '.working')};
+    const config = {
+      workingDir: path.join(__dirname, '..', '.working'),
+      repos: []
+    };
     serverdown.init(config);
     expect(serverdown).to.have.property('initialized', true);
-    log.debug('serverdown :', serverdown);
     expect(serverdown).to.have.property('config');
     expect(serverdown.config).to.eql(config);
     expect(serverdown).to.have.property('locals');
@@ -34,5 +36,14 @@ describe('servedown', () => {
     expect(locals).to.have.property('config');
     expect(locals.config).to.have.property('workingDir', config.workingDir);
   });
+
+  it('should compute', () => serverdown.compute()
+    .then(() => {
+      expect(serverdown).to.have.property('locals');
+      const locals = serverdown.locals;
+      expect(locals).to.have.property('docs');
+      expect(locals.docs).to.be.an('object');
+    })
+  );
 
 });
