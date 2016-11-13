@@ -10,7 +10,7 @@ Serve your markdown documentations
 ## Why?
 
 - Needed a simple solution to render markdown files in many git projects
-- Did not get fully satisfied with [gollum](https://github.com/gollum/gollum) or [smeagol](https://github.com/rubyworks/smeagol) (though there are very nice)
+- Did not get fully satisfied with [gollum](https://github.com/gollum/gollum) or [smeagol](https://github.com/rubyworks/smeagol)
 - Render docs for read-only usage
 - Ability to easily customize styles and templates 
 
