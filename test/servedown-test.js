@@ -9,20 +9,19 @@ const ServerDown = require('../lib/servedown');
 
 describe('servedown', () => {
 
-  let serverdown;
-
   before(() => {
     logger.setLevel('trace');
   });
 
   it('should instantiate a ServerDown instance', () => {
-    serverdown = new ServerDown();
+    const serverdown = new ServerDown();
     expect(serverdown).to.be.ok;
     expect(serverdown).to.have.property('locals');
     expect(serverdown).not.to.have.property('initialized');
   });
 
   it('should init', () => {
+    const serverdown = new ServerDown();
     const config = {
       workingDir: path.join(__dirname, '..', '.working'),
       repos: []
@@ -37,13 +36,18 @@ describe('servedown', () => {
     expect(locals.config).to.have.property('workingDir', config.workingDir);
   });
 
-  it('should compute', () => serverdown.compute()
-    .then(() => {
-      expect(serverdown).to.have.property('locals');
-      const locals = serverdown.locals;
-      expect(locals).to.have.property('docs');
-      expect(locals.docs).to.be.an('object');
-    })
-  );
+  it('should compute empty working dir', () => {
+    const config = {
+      workingDir: path.join(__dirname, '..', '.working'),
+      repos: []
+    };
+    const serverdown = new ServerDown(config);
+    return serverdown.compute()
+      .then(() => {
+        expect(serverdown).to.have.property('locals');
+        const locals = serverdown.locals;
+        expect(locals).not.to.have.property('docs');
+      });
+  });
 
 });
