@@ -4,7 +4,7 @@ const path = require('path');
 const chai = require('chai');
 const expect = chai.expect;
 const logger = require('hw-logger');
-const log = logger.log;
+//const log = logger.log;
 const ServerDown = require('../lib/servedown');
 
 describe('servedown', () => {
