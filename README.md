@@ -80,11 +80,11 @@ Default configuration :
 ```yaml
 workingDir: "/home/user/.servedown"                     # Working directory where git repos are checked out
 excludeDir: "(.git|.gitignore|.idea|node_modules)$"     # Directory to exclude from scan
-repos:                                                  # Git repos containing markdown files to serve
-  - name: servedown
-    url: https://github.com/openhoat/servedown          # URL of repo (used for source link, and when ssh is not used)
-    # ssh: git@mygitlabserver/myproject                 # Example of gitlab ssh URL
-    # filePattern: /blob/master/{{file}}                # URL pattern to directly link the file source
+#repos:                                                 # Git repos containing markdown files to serve
+#  - name: servedown
+#    url: https://github.com/openhoat/servedown         # URL of repo (used for source link, and when ssh is not used)
+#    ssh: git@mygitlabserver/myproject                  # Example of gitlab ssh URL
+#    filePattern: /blob/master/{{file}}                 # URL pattern to directly link the file source
 repoInclude:                                            # If set, only fetch the specified directories (faster git clone)
   - assets/
 markdownExt:                                            # Markdown file extensions to match while scanning (no reason to change)
@@ -167,6 +167,24 @@ Use one of the two themes provided or use your owns, and hot switch the current 
 ### TOC support
  
 Table of contents is dynamically generated from the level 2 headers of markdown contents.
+
+### Web sequence diagrams support
+ 
+Embed your [websequence diagrams](https://www.websequencediagrams.com/) in md content with '{{{{{{' '}}}}}}' tags.
+
+Example :
+
+```
+{{{{{{ modern-blue
+
+title Authentication Sequence
+
+Alice->Bob: Authentication Request
+note right of Bob: Bob thinks about it
+Bob->Alice: Authentication Response
+
+}}}}}}
+```
 
 ### Git source link
 
