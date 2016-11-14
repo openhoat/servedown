@@ -170,7 +170,7 @@ Table of contents is dynamically generated from the level 2 headers of markdown 
 
 ### Web sequence diagrams support
  
-Embed your [websequence diagrams](https://www.websequencediagrams.com/) in md content with '{{{{{{' '}}}}}}' tags.
+Embed your [websequence diagrams](https://www.websequencediagrams.com/) in md content with **{{{{{{** **}}}}}}** tags.
 
 Example :
 
