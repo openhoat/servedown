@@ -1,3 +1,21 @@
+@media (min-width: 768px) {
+  body img {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  body img {
+    max-width: 930px;
+  }
+}
+
+@media (min-width: 1200px) {
+  body img {
+    max-width: 1140px;
+  }
+}
+
 body .table tbody > tr > td {
   vertical-align: middle;
 }
