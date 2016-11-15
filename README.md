@@ -162,6 +162,12 @@ servedown.compute() // Prepare html rendering
 
 ## Features
 
+### Git support
+
+Add your git repositories and servedown will automatically checkout them.
+ 
+By default, servedown will optimize the clone operation : only markdown files are fetched.
+
 ### Theme support
  
 Use one of the two themes provided or use your owns, and hot switch the current theme with **?theme=**
@@ -195,5 +201,11 @@ Optionnaly show the source link of the current document to make documentation ch
 ### Hot update
 
 Add **?update** to your browser address and it will reload, included git update.
+
+### Search support
+
+Add ?q=anysearch to your browser address and servedown will search through your docs, show matches in a search result page and highlight the results into the doc content.
+
+Into the doc content, press 'n' or 'p' to go to next/previous matching.
 
 Enjoy!
