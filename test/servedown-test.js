@@ -23,7 +23,7 @@ describe('servedown', () => {
   it('should init', () => {
     const serverdown = new ServerDown();
     const config = {
-      workingDir: path.join(__dirname, '..', '.working'),
+      workingDir: path.join(__dirname, '..', 'dist', '.working'),
       repos: []
     };
     serverdown.init(config);
@@ -38,7 +38,7 @@ describe('servedown', () => {
 
   it('should compute empty working dir', () => {
     const config = {
-      workingDir: path.join(__dirname, '..', '.working'),
+      workingDir: path.join(__dirname, '..', 'dist', '.working'),
       repos: []
     };
     const serverdown = new ServerDown(config);
@@ -48,6 +48,35 @@ describe('servedown', () => {
         const locals = serverdown.locals;
         expect(locals).not.to.have.property('docs');
       });
+  });
+
+  it('sould preprocess content', () => {
+    const config = {
+      workingDir: path.join(__dirname, '..', 'dist', '.working'),
+      repos: []
+    };
+    const serverdown = new ServerDown();
+    serverdown.init(config);
+    const src = serverdown.preprocessContent(['# Title 1', '',
+      '{{{{{{',
+      'content',
+      '}}}}}}',
+      '',
+      '# Title 2',
+      '## Subtitle',
+      ''].join('\n')
+    );
+    expect(src).to.equal(['# Title 1',
+      '',
+      '<div class="wsd" wsd_style=""><pre>',
+      '',
+      '	content',
+      '',
+      '</pre></div><script src="http://www.websequencediagrams.com/service.js"></script>',
+      '',
+      '# Title 2',
+      '## Subtitle', ''].join('\n')
+    );
   });
 
 });
