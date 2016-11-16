@@ -142,7 +142,41 @@ Use one of the two themes provided or use your owns, and hot switch the current 
  
 Table of contents is dynamically generated from the level 2 headers of markdown contents, look at mydocs theme template example to see how TOC is rendered.
 
-### Web sequence diagrams support
+### Git source link
+
+Optionnaly show the source link of the current document to make documentation changes easy.
+
+### Hot update
+
+Add **?update** to your browser address and it will reload, included git update.
+
+### Search support
+
+Add ?q=anysearch to your browser address and servedown will search through your docs, show matches in a search result page and highlight the results into the doc content.
+
+Into the doc content, press 'n' or 'p' to go to next/previous matching.
+
+The /search route provides a default search form overridable by search.html theme template.
+
+### Markdown extensions
+
+#### Link title
+
+```
+[[ My Title ]]
+```
+
+This is shorthand to [My Title](my-title)
+
+#### Include
+
+```
+[[ include: my/doc/to/include.md ]]
+```
+
+Specified doc path is included into content, relative or absolute paths are supported, file extension is required.
+
+#### Web sequence diagrams
  
 Embed your [websequence diagrams](https://www.websequencediagrams.com/) in md content with **{{{{{{** **}}}}}}** tags.
 
@@ -160,18 +194,5 @@ Bob->Alice: Authentication Response
 }}}}}}
 ```
 
-### Git source link
-
-Optionnaly show the source link of the current document to make documentation changes easy.
-
-### Hot update
-
-Add **?update** to your browser address and it will reload, included git update.
-
-### Search support
-
-Add ?q=anysearch to your browser address and servedown will search through your docs, show matches in a search result page and highlight the results into the doc content.
-
-Into the doc content, press 'n' or 'p' to go to next/previous matching.
 
 Enjoy!

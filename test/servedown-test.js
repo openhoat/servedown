@@ -6,6 +6,8 @@ const expect = chai.expect;
 const logger = require('hw-logger');
 //const log = logger.log;
 const ServerDown = require('../lib/servedown');
+const srcDir = path.join(__dirname, '..', 'dist', 'test', 'src');
+const metaDir = path.join(__dirname, '..', 'dist', 'test', 'meta');
 
 describe('servedown', () => {
 
@@ -22,10 +24,7 @@ describe('servedown', () => {
 
   it('should init', () => {
     const serverdown = new ServerDown();
-    const config = {
-      workingDir: path.join(__dirname, '..', 'dist', '.working'),
-      repos: []
-    };
+    const config = {srcDir, metaDir, repos: []};
     serverdown.init(config);
     expect(serverdown).to.have.property('initialized', true);
     expect(serverdown).to.have.property('config');
@@ -33,16 +32,14 @@ describe('servedown', () => {
     expect(serverdown).to.have.property('locals');
     const locals = serverdown.locals;
     expect(locals).to.have.property('config');
-    expect(locals.config).to.have.property('workingDir', config.workingDir);
+    expect(locals.config).to.have.property('srcDir', srcDir);
+    expect(locals.config).to.have.property('metaDir', metaDir);
   });
 
-  it('should compute empty working dir', () => {
-    const config = {
-      workingDir: path.join(__dirname, '..', 'dist', '.working'),
-      repos: []
-    };
+  it('should process empty working dir', () => {
+    const config = {srcDir: path.join(__dirname, '..', 'dist', 'test', 'tmp'), metaDir, repos: []};
     const serverdown = new ServerDown(config);
-    return serverdown.compute()
+    return serverdown.process()
       .then(() => {
         expect(serverdown).to.have.property('locals');
         const locals = serverdown.locals;
@@ -51,10 +48,7 @@ describe('servedown', () => {
   });
 
   it('sould preprocess content', () => {
-    const config = {
-      workingDir: path.join(__dirname, '..', 'dist', '.working'),
-      repos: []
-    };
+    const config = {srcDir, metaDir, repos: []};
     const serverdown = new ServerDown();
     serverdown.init(config);
     const src = serverdown.preprocessContent(['# Title 1', '',

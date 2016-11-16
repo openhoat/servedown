@@ -4,7 +4,7 @@ $(function() {
     $(window).trigger('scroll');
   });
 
-  $('body').scrollspy({target: '#doc-nav', offset: 100});
+  $('body').scrollspy({target: '#doc-nav', offset: 0});
 
   $('a.scrollto').on('click', function(e) {
     const target = this.hash;

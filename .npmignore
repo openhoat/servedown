@@ -1,3 +1,6 @@
-.working/
+.idea/
 dist/
 samples/
+test/
+tmp/
+npm-debug.log

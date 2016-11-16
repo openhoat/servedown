@@ -14,7 +14,7 @@ servedown.init({ // Initialize with custom config
     url: 'https://github.com/openhoat/servedown'
   }]
 });
-servedown.compute() // Prepare html rendering
+servedown.process() // Prepare html rendering
   .then(() => {
     app.use(servedown.buildExpressRouter()); // Use provided express middleware
     app.listen(3000, () => {
