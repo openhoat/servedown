@@ -73,47 +73,9 @@ $ npm i servedown -g
 
 ### Usage
 
-Set your custom configuration in ~/.servedown.yml :
+Setup your custom configuration in ~/.servedown.yml :
 
-Default configuration :
-
-```yaml
-workingDir: "/home/user/.servedown"                     # Working directory where git repos are checked out
-excludeDir: "(.git|.gitignore|.idea|node_modules)$"     # Directory to exclude from scan
-enableGit: true                                         # Enable or disable git operations
-repos:                                                  # Git repos containing markdown files to serve
-  - name: servedown
-    url: https://github.com/openhoat/servedown          # URL of repo (used for source link, and when ssh is not used)
-    ssh: git@mygitlabserver/myproject                   # Example of gitlab ssh URL
-    filePattern: /blob/master/{{file}}                  # URL pattern to directly link the file source
-#    branch: master                                     # Custom branch name (defaults to master)
-repoInclude:                                            # If set, only fetch the specified directories (faster git clone)
-  - assets/
-markdownExt:                                            # Markdown file extensions to match while scanning (no reason to change)
-  - md
-  - markdown
-indexPattern: "(readme|home)"                           # File names to consider as index for browsing
-themes:                                                 # Default provided themes (feel free to add yours)
-  mydocs: "/project/servedown/themes/mydocs"
-  simple: "/project/servedown/themes/simple"
-defaultTheme: bnum                                      # Default theme name (ovverride in browser with ?theme=)
-template: template.html                                 # Template file name to render html
-indexTemplate: index.html                               # Template file name to render root page
-defaultTitle: Home                                      # Default title (for example, used in root page)
-updateQuery: true                                       # True, to enable hot update support (?update in browser) 
-htmlRender:                                             # Configuration to use to convert md to html
-  html: true                                            # For full usage information please see https://github.com/chjj/marked
-  xhtmlOut: false
-  breaks: false
-  langPrefix: lang-
-  linkify: false
-  typographer: false
-  quotes: "“”‘’"
-server:                                                 # Server configuration : used only from command line
-  host: "0.0.0.0"                                       # Optionnal server host to listen
-  port: 3000                                            # Server port, overrided by SERVEDOWN_PORT environment variable
-  # socket:                                             # Optionnal server *nix socket, overrided by SERVEDOWN_SOCKET environment variable (is set, port and host are ignored)
-```
+Have a look at the [default configuration file](blob/master/lib/default-config.js) to understand all the customizable features.
 
 Starts the servedown doc server :
 
@@ -162,6 +124,10 @@ servedown.compute() // Prepare html rendering
 
 ## Features
 
+### Configuration format
+
+Servedown supports json, js, or yaml format for configuration file.
+
 ### Git support
 
 Add your git repositories and servedown will automatically checkout them.
@@ -174,7 +140,7 @@ Use one of the two themes provided or use your owns, and hot switch the current 
 
 ### TOC support
  
-Table of contents is dynamically generated from the level 2 headers of markdown contents.
+Table of contents is dynamically generated from the level 2 headers of markdown contents, look at mydocs theme template example to see how TOC is rendered.
 
 ### Web sequence diagrams support
  
