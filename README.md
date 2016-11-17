@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.org/openhoat/servedown.png?branch=master)](https://travis-ci.org/openhoat/servedown)
 [![Coverage Status](https://coveralls.io/repos/openhoat/servedown/badge.svg)](https://coveralls.io/r/openhoat/servedown)
 ![License](https://img.shields.io/npm/l/express.svg?style=flat-square)
-![NPM dependencies](https://david-dm.org/openhoat/servedown.svg)](https://david-dm.org/openhoat/servedown.svg)
+![NPM dependencies](https://david-dm.org/openhoat/servedown.svg)]
 
 # Servedown
 
