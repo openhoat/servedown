@@ -1,3 +1,7 @@
+body p {
+  line-height: 1.7;
+}
+
 body span.error {
   color: #da0500;
 }
