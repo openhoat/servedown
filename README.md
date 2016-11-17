@@ -12,7 +12,7 @@ Serve your markdown documentations
 - Needed a simple solution to render markdown files in many git projects
 - Did not get fully satisfied with [gollum](https://github.com/gollum/gollum) or [smeagol](https://github.com/rubyworks/smeagol)
 - Render docs for read-only usage
-- Ability to easily customize styles and templates 
+- Ability to easily customize styles and templates
 
 ## Getting started
 
@@ -119,6 +119,26 @@ app.listen(3000, () => {
   console.log('ready');
 });
 ```
+
+## Principles and conventions
+
+Here's a short description of how servedown works :
+
+- init : loads the configuration
+- process : computes all the doc files
+    - if Git repos are enabled, executes an update or clone of each repos
+    - scans the src files
+    - for each file, process markdown to html conversion and write the result into the meta dir
+
+All provided methods are synchronous because of markdown parser, usually this is not a good practice but here it matches the use case.
+
+Conventions :
+
+- each doc project is associated with a context name (directory of the git url)
+- static theme assets are served with /assets/* route
+- /search route is reserved to the search form page
+- all doc routes are based on the doc file path encoded to a valid uri (lowercase, spaces replaced by '-')
+- any doc file name matching the configured index pattern is considered as a welcome page for its parent directory (/mypath/home.md is exposed as /mypath/)
 
 ## Features
 
