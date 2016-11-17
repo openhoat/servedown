@@ -39,12 +39,23 @@
           </a>
           <span class="text-bold"><%- title %></span>
         </h1>
+        <ul class="nav nav-pills pull-right">
+          <li><a href="/search">Search</a></li>
+          <li><a href="/about">About</a></li>
+        </ul>
       </div>
-      <ol class="breadcrumb">
-        <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/search">Search</a></li>
-      </ol>
+      <ul class="breadcrumb">
+        <li><a href="/">Home</a></li><%
+        if (typeof breadcrumb !== 'undefined') {
+          breadcrumb.forEach((item, index) => {
+            if (index < breadcrumb.length - 1) { %>
+          <li><a href="/<%- item %>"><%= item %></a></li><%
+            } else { %>
+          <li><%= item %></li><%
+            }
+          });
+        } %>
+      </ul>
     </div>
   </header>
   <div class="doc-wrapper">
