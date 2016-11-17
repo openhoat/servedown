@@ -39,12 +39,10 @@ describe('servedown', () => {
   it('should process empty working dir', () => {
     const config = {srcDir: path.join(__dirname, '..', 'dist', 'test', 'tmp'), metaDir, repos: []};
     const serverdown = new ServerDown(config);
-    return serverdown.process()
-      .then(() => {
-        expect(serverdown).to.have.property('locals');
-        const locals = serverdown.locals;
-        expect(locals).not.to.have.property('docs');
-      });
+    serverdown.process();
+    expect(serverdown).to.have.property('locals');
+    const locals = serverdown.locals;
+    expect(locals).not.to.have.property('docs');
   });
 
   it('sould preprocess content', () => {
