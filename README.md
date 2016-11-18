@@ -149,6 +149,8 @@ Servedown supports json, js, or yaml format for configuration file.
 
 ### Git support
 
+**Prerequisite : git command installed**
+
 Add your git repositories and servedown will automatically checkout them.
  
 By default, servedown will optimize the clone operation : only markdown files are fetched.
