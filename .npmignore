@@ -4,3 +4,7 @@ samples/
 test/
 tmp/
 npm-debug.log
+.eslintrc.yml
+.istanbul.yml
+.node-version
+.travis.yml
