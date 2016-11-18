@@ -18,7 +18,7 @@ describe('servedown', () => {
   it('should instantiate a ServerDown instance', () => {
     const serverdown = new ServerDown();
     expect(serverdown).to.be.ok;
-    expect(serverdown).to.have.property('locals');
+    expect(serverdown).to.have.property('config');
     expect(serverdown).not.to.have.property('initialized');
   });
 
