@@ -125,11 +125,11 @@ app.listen(3000, () => {
 
 Here's a short description of how servedown works :
 
-- init : loads the configuration
-- process : computes all the doc files
-    - if Git repos are enabled, executes an update or clone of each repos
-    - scans the src files
-    - for each file, process markdown to html conversion and write the result into the meta dir
+- servedown first loads the configuration (init)
+- if there are git repos, a git pull or clone is executed for each repo
+- all source files are scanned
+- each markdown file is converted to html content
+- a data file is created into the meta directory to save the resulting html and other informations about the source file
 
 All provided methods are synchronous because of markdown parser, usually this is not a good practice but here it matches the use case.
 
