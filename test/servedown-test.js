@@ -7,7 +7,7 @@ const logger = require('hw-logger');
 //const log = logger.log;
 const ServerDown = require('../lib/servedown');
 const srcDir = path.join(__dirname, '..', 'dist', 'test', 'src');
-const metaDir = path.join(__dirname, '..', 'dist', 'test', 'meta');
+const cacheDir = path.join(__dirname, '..', 'dist', 'test', 'cache');
 
 describe('servedown', () => {
 
@@ -24,7 +24,7 @@ describe('servedown', () => {
 
   it('should init', () => {
     const serverdown = new ServerDown();
-    const config = {srcDir, metaDir, repos: []};
+    const config = {srcDir, cacheDir, repos: []};
     serverdown.init(config);
     expect(serverdown).to.have.property('initialized', true);
     expect(serverdown).to.have.property('config');
@@ -33,20 +33,20 @@ describe('servedown', () => {
     const locals = serverdown.locals;
     expect(locals).to.have.property('config');
     expect(locals.config).to.have.property('srcDir', srcDir);
-    expect(locals.config).to.have.property('metaDir', metaDir);
+    expect(locals.config).to.have.property('cacheDir', cacheDir);
   });
 
   it('should process empty working dir', () => {
-    const config = {srcDir: path.join(__dirname, '..', 'dist', 'test', 'tmp'), metaDir, repos: []};
+    const config = {srcDir: path.join(__dirname, '..', 'dist', 'test', 'tmp'), cacheDir, repos: []};
     const serverdown = new ServerDown(config);
-    serverdown.process();
-    expect(serverdown).to.have.property('locals');
-    const locals = serverdown.locals;
-    expect(locals).not.to.have.property('docs');
+    return serverdown.process()
+      .then(() => {
+        expect(serverdown).to.have.property('locals');
+      });
   });
 
   it('sould preprocess content', () => {
-    const config = {srcDir, metaDir, repos: []};
+    const config = {srcDir, cacheDir, repos: []};
     const serverdown = new ServerDown();
     serverdown.init(config);
     const src = serverdown.preprocessContent(['# Title 1', '',

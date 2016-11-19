@@ -108,7 +108,7 @@ const app = express();
 const servedown = new ServeDown(); // Create a servedown instance
 
 servedown.init({ // Initialize with custom config
-  workingDir: path.join(__dirname, '..', '.working'), // Temp dir for working copies
+  cacheDir: path.join(__dirname, '..', '.working', 'cache'), // Cache dir
   repos: [{ // Git repos to get the markdown docs from
     name: 'servedown',
     url: 'https://github.com/openhoat/servedown'
@@ -116,8 +116,9 @@ servedown.init({ // Initialize with custom config
 });
 app.use(servedown.buildExpressRouter()); // Use provided express middleware
 app.listen(3000, () => {
-  servedown.process(); // Prepare html rendering
-  console.log('ready');
+  servedown.process(() => {  // Prepare html rendering
+    console.log('ready');
+  });
 });
 ```
 
@@ -129,9 +130,7 @@ Here's a short description of how servedown works :
 - if there are git repos, a git pull or clone is executed for each repo
 - all source files are scanned
 - each markdown file is converted to html content
-- a data file is created into the meta directory to save the resulting html and other informations about the source file
-
-All provided methods are synchronous because of markdown parser, usually this is not a good practice but here it matches the use case.
+- html content and meta datas are stored in a filesystem cache (specified by cacheDir in configuration)
 
 Conventions :
 
