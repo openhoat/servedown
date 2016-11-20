@@ -1,6 +1,6 @@
 {
   "name": "servedown",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Serve your markdown documentations",
   "main": "lib/servedown.js",
   "scripts": {
