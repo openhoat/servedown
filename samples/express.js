@@ -8,7 +8,7 @@ const app = express();
 const servedown = new ServeDown(); // Create a servedown instance
 
 servedown.init({ // Initialize with custom config
-  cacheDir: path.join(__dirname, '..', '.working', 'cache'), // Cache dir
+  cacheDir: path.join(__dirname, '..', 'dist', 'working', 'cache'), // Cache dir
   repos: [{ // Git repos to get the markdown docs from
     name: 'servedown',
     url: 'https://github.com/openhoat/servedown'

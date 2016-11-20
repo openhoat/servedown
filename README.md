@@ -88,7 +88,7 @@ If repos are specified in configuraton servedown will checkout them into the wor
 
 ## Module
 
-If you prefer to embed servedown features into an existing express app, then use the provided middleware.
+If you prefer to embed servedown features into an existing app, then use the servedown module.
 
 ### Installation
 
@@ -101,14 +101,33 @@ $ npm i servedown --save
 
 ```javascript
 const path = require('path');
-const express = require('express');
 const ServeDown = require('../lib/servedown');
+
+ServeDown.start( // Factory static helper method
+  {
+    cacheDir: path.join(__dirname, '..', 'dist', 'working', 'cache'), // Cache dir
+    repos: [{ // Git repos to get the markdown docs from
+      name: 'servedown',
+      url: 'https://github.com/openhoat/servedown'
+    }]
+  })
+  .then(() => {
+    console.log('ready');
+  });
+```
+
+or the longer way :
+
+```javascript
+const path = require('path');
+const express = require('express');
+const ServeDown = require('servedown');
 const app = express();
 
 const servedown = new ServeDown(); // Create a servedown instance
 
 servedown.init({ // Initialize with custom config
-  cacheDir: path.join(__dirname, '..', '.working', 'cache'), // Cache dir
+  cacheDir: path.join(__dirname, '..', 'dist', 'working', 'cache'), // Cache dir
   repos: [{ // Git repos to get the markdown docs from
     name: 'servedown',
     url: 'https://github.com/openhoat/servedown'

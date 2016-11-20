@@ -4,7 +4,7 @@
   "description": "Serve your markdown documentations",
   "main": "lib/servedown.js",
   "scripts": {
-    "clean": "rimraf dist/*",
+    "clean": "rimraf dist/",
     "start": "node lib/servedown.js",
     "lint": "eslint .",
     "test": "mocha",
