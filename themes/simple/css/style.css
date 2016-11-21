@@ -3,5 +3,9 @@ html {
 }
 
 body {
+  max-width: 960px;
   background-color: #fff;
+  margin: 20px auto;
+  padding: 10px 20px;
+  border-radius: 25px;
 }
