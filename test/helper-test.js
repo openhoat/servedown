@@ -13,4 +13,33 @@ describe('helper', () => {
     expect(id).to.equal('any-title-with-special-characters-and-acceeentscaou');
   });
 
+  it('should find repo', () => {
+    const name = 'repo1';
+    const repos = [{name, value: 'value1'}, {name: 'repo2', value: 'value2'}];
+    const repo = helper.findRepo(name, repos);
+    expect(repo).to.eql(repos[0]);
+  });
+
+  it('should find repo', () => {
+    const repoName = helper.getRepoName('reponame/subdir/subsubdir/file');
+    expect(repoName).to.equal('reponame');
+  });
+
+  it('should build breadcrumb', () => {
+    const repoName = helper.buildBreadcrumb({path: 'reponame/subdir/subsubdir/file'});
+    expect(repoName).to.eql(['subdir', 'subsubdir', 'file']);
+  });
+
+  it('should execute command', () => {
+    const text = 'Hello!';
+    return helper.executeCmd(`echo "${text}"`)
+      .then(result => {
+        expect(result).to.have.property('stdout', `${text}\n`);
+      })
+      .then(() => helper.executeCmd(`>&2 echo "${text}"`))
+      .then(result => {
+        expect(result).to.have.property('stderr', `${text}\n`);
+      });
+  });
+
 });
