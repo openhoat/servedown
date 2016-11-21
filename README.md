@@ -175,7 +175,13 @@ By default, servedown will optimize the clone operation : only markdown files ar
 
 ### Theme support
  
-Use one of the two themes provided or use your owns, and hot switch the current theme with **?theme=**
+Use one of the two themes provided or use your owns, and hot switch the current theme with **?theme=**.
+
+Provided themes :
+- github : sample "github like" template
+- mydocs (default) : a complete and pretty template with table of contents, breadcrumb, and action buttons
+- readthedocs : "readthedocs" like template, for test purpose
+- simple : simplest template (no style)
 
 ### TOC support
  
