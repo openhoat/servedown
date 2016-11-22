@@ -86,10 +86,10 @@ describe('servedown', () => {
       const config = {srcDir, cacheDir, repos: []};
       const servedown = new ServeDown();
       servedown.init(config);
-      const contentSrcDir = path.join(__dirname, 'src');
+      const contentSrcDir = path.join(__dirname, 'src', 'markdown-samples');
       return fs.readdirAsync(contentSrcDir)
         .reduce((result, file) => {
-          const match = file.match(/^test-([0-9]+).md$/);
+          const match = file.match(/^sample-([0-9]+).md$/);
           if (!match) {
             return result;
           }

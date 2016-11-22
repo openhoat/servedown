@@ -2,11 +2,16 @@
 
 const chai = require('chai');
 const expect = chai.expect;
-//const logger = require('hw-logger');
+const path = require('path');
+const logger = require('hw-logger');
 //const log = logger.log;
 const helper = require('../lib/helper');
 
 describe('helper', () => {
+
+  before(() => {
+    logger.setLevel('trace');
+  });
 
   it('should convert to id', () => {
     const id = helper.toId('Any title with (special characters) $ * "and accéèentsçàôù" :');
@@ -39,6 +44,33 @@ describe('helper', () => {
       .then(() => helper.executeCmd(`>&2 echo "${text}"`))
       .then(result => {
         expect(result).to.have.property('stderr', `${text}\n`);
+      });
+  });
+
+  it('should scan files', () => {
+    const config = require('../lib/default-config');
+    const mdExtPattern = config['markdownExt'].join('|');
+    const include = new RegExp(`\.(${mdExtPattern})$`);
+    return helper
+      .scanMdFiles({
+        baseDir: path.join(__dirname, 'src'),
+        excludeDir: config['excludeDir'], include
+      })
+      .then(result => {
+        const expectedResult = ['doc1/readme.md',
+          'markdown-samples/sample-1.md',
+          'markdown-samples/sample-10.md',
+          'markdown-samples/sample-11.md',
+          'markdown-samples/sample-2.md',
+          'markdown-samples/sample-3.md',
+          'markdown-samples/sample-4.md',
+          'markdown-samples/sample-5.md',
+          'markdown-samples/sample-6.md',
+          'markdown-samples/sample-7.md',
+          'markdown-samples/sample-8.md',
+          'markdown-samples/sample-9.md'
+        ];
+        expect(result).to.eql(expectedResult);
       });
   });
 
