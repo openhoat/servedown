@@ -31,8 +31,19 @@ describe('helper', () => {
   });
 
   it('should build breadcrumb', () => {
-    const repoName = helper.buildBreadcrumb({path: 'reponame/subdir/subsubdir/file'});
-    expect(repoName).to.eql(['subdir', 'subsubdir', 'file']);
+    const repoName = helper.buildBreadcrumb('reponame/subdir/subsubdir/file');
+    expect(repoName).to.eql([
+      {
+        title: 'subdir',
+        url: 'subdir'
+      }, {
+        title: 'subsubdir',
+        url: 'subdir/subsubdir'
+      }, {
+        title: 'file',
+        url: 'subdir/subsubdir/file'
+      }
+    ]);
   });
 
   it('should execute command', () => {
