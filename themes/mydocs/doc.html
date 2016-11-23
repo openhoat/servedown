@@ -47,9 +47,9 @@
         if (typeof breadcrumb !== 'undefined') {
           breadcrumb.forEach((item, index) => {
             if (index < breadcrumb.length - 1) { %>
-          <li><a href="/<%- item %>"><%= item %></a></li><%
+          <li><a href="/<%- item.url %>"><%= item.title %></a></li><%
             } else { %>
-          <li><%= item %></li><%
+          <li><%= item.title %></li><%
             }
           });
         } %>
