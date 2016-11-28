@@ -239,5 +239,27 @@ Bob->Alice: Authentication Response
 }}}}}}
 ```
 
+#### Config var injection
+
+First place a config.yml file at the root level of the documentation :
+
+```yaml
+myvar: this will be injected
+another:
+    foo: bar
+```
+
+Then inject configuration data reference into markdown content using **[{ }]** tag :
+
+```
+[{ myvar }]
+```
+
+Another example :
+
+```
+[{ another.foo }]
+```
+
 
 Enjoy!
