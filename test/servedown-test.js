@@ -75,7 +75,7 @@ describe('servedown', () => {
         '',
         '	content',
         '',
-        '</pre></div><script src="http://www.websequencediagrams.com/service.js"></script>',
+        '</pre></div><script src="//www.websequencediagrams.com/service.js"></script>',
         '',
         '# Title 2',
         '## Subtitle', ''].join('\n')
