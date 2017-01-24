@@ -3,6 +3,9 @@ env:
   node: true
   mocha: true
 extends: ['eslint:recommended', 'nodejs']
+parserOptions:
+  ecmaVersion: 6
+  sourceType: module
 rules:
   indent:
     - error
@@ -19,7 +22,10 @@ rules:
       allowTemplateLiterals: true
   semi:
     - error
-    - always
+    - never
+  comma-dangle:
+    - error
+    - only-multiline
   no-var: warn
   object-shorthand: warn
   prefer-arrow-callback: warn
