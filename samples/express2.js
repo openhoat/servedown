@@ -1,7 +1,5 @@
-'use strict';
-
-const path = require('path');
-const ServeDown = require('../lib/servedown');
+const path = require('path')
+const ServeDown = require('../lib/servedown')
 
 ServeDown.start( // Factory static helper method
   {
@@ -12,5 +10,5 @@ ServeDown.start( // Factory static helper method
     }]
   })
   .then(() => {
-    console.log('ready');
-  });
+    console.log('ready')
+  })
