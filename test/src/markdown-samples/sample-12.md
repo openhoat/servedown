@@ -1,6 +1,6 @@
 ## Mermaid content
 
-```
+```mermaid
 
 graph LR
     A-->B
