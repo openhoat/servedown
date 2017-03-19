@@ -221,14 +221,14 @@ This is shorthand to [My Title](my-title)
 
 Specified doc path is included into content, relative or absolute paths are supported, file extension is required.
 
-#### Web sequence diagrams
+#### Mermaid charts
  
-Embed your [websequence diagrams](https://www.websequencediagrams.com/) in md content with **{{{{{{** **}}}}}}** tags.
+Embed your [Mermaid charts](https://knsv.github.io/mermaid/) in md content with **```** **```** tags.
 
 Example :
 
 ```
-{{{{{{ modern-blue
+sequenceDiagram
 
 title Authentication Sequence
 
@@ -236,7 +236,6 @@ Alice->Bob: Authentication Request
 note right of Bob: Bob thinks about it
 Bob->Alice: Authentication Response
 
-}}}}}}
 ```
 
 #### Config var injection
