@@ -223,19 +223,22 @@ Specified doc path is included into content, relative or absolute paths are supp
 
 #### Mermaid charts
  
-Embed your [Mermaid charts](https://knsv.github.io/mermaid/) in md content with **```** **```** tags.
+Embed your [Mermaid charts](https://knsv.github.io/mermaid/) in md content with **```mermaid** **```** tags.
 
 Example :
 
 ```
-sequenceDiagram
+    ```mermaid
 
-title Authentication Sequence
+    sequenceDiagram
 
-Alice->Bob: Authentication Request
-note right of Bob: Bob thinks about it
-Bob->Alice: Authentication Response
+    title Authentication Sequence
 
+    Alice->Bob: Authentication Request
+    note right of Bob: Bob thinks about it
+    Bob->Alice: Authentication Response
+
+    ```
 ```
 
 #### Config var injection
