@@ -54,32 +54,6 @@ describe('servedown', () => {
 
   describe('markdown content', () => {
 
-    it('sould preprocess content', () => {
-      const config = {srcDir, cacheDir, repos: []}
-      const servedown = new ServeDown()
-      servedown.init(config)
-      const src = servedown.preprocessContent(['# Title 1', '',
-        '{{{{{{',
-        'content',
-        '}}}}}}',
-        '',
-        '# Title 2',
-        '## Subtitle',
-        ''].join('\n')
-      )
-      expect(src).to.equal(['# Title 1',
-        '',
-        '<div class="wsd" wsd_style=""><pre>',
-        '',
-        '	content',
-        '',
-        '</pre></div><script src="//www.websequencediagrams.com/service.js"></script>',
-        '',
-        '# Title 2',
-        '## Subtitle', ''].join('\n')
-      )
-    })
-
     it('should render markdown contents', () => {
       const config = {srcDir, cacheDir, repos: []}
       const servedown = new ServeDown()
