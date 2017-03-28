@@ -232,11 +232,9 @@ Example :
 
     sequenceDiagram
 
-    title Authentication Sequence
-
-    Alice->Bob: Authentication Request
+    Alice->>Bob: Authentication Request
     note right of Bob: Bob thinks about it
-    Bob->Alice: Authentication Response
+    Bob->>Alice: Authentication Response
 
     ```
 ```
