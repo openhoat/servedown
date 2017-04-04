@@ -92,6 +92,8 @@ If you prefer to embed servedown features into an existing app, then use the ser
 
 ### Installation
 
+Prerequisite : install [NodeJS](https://nodejs.org/en/)
+
 ```shell
 $ cd yournodeproject
 $ npm i servedown --save
