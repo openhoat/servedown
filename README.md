@@ -68,6 +68,8 @@ All you have to do is :
 
 ### Installation
 
+Prerequisite : install [NodeJS](https://nodejs.org/en/)
+
 ```shell
 $ npm i servedown -g
 ```
@@ -91,8 +93,6 @@ If repos are specified in configuraton servedown will checkout them into the wor
 If you prefer to embed servedown features into an existing app, then use the servedown module.
 
 ### Installation
-
-Prerequisite : install [NodeJS](https://nodejs.org/en/)
 
 ```shell
 $ cd yournodeproject
