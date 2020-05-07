@@ -9,7 +9,9 @@
     "lint": "eslint .",
     "test": "mocha",
     "cover": "istanbul cover _mocha",
-    "coveralls": "npm run cover -- -- -R spec && cat dist/coverage/lcov.info | coveralls && rimraf dist/coverage"
+    "coveralls": "npm run cover -- -- -R spec && cat dist/coverage/lcov.info | coveralls && rimraf dist/coverage",
+    "snyk-protect": "snyk protect",
+    "prepare": "yarn run snyk-protect"
   },
   "bin": {
     "servedown": "./bin/servedown"
@@ -40,7 +42,8 @@
     "marked": "^0.3.6",
     "mkdirp": "^0.5.1",
     "rimraf": "^2.5.4",
-    "yamljs": "^0.2.8"
+    "yamljs": "^0.2.8",
+    "snyk": "^1.319.1"
   },
   "devDependencies": {
     "chai": "^3.5.0",
@@ -50,5 +53,6 @@
     "eslint-plugin-import": "^2.1.0",
     "istanbul": "^0.4.5",
     "mocha": "^3.1.2"
-  }
+  },
+  "snyk": true
 }
